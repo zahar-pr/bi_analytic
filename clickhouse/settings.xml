@@ -1,0 +1,13 @@
+<clickhouse>
+    <profiles>
+        <default>
+            <connect_timeout from_env="CONNECT_TIMEOUT"/>
+            <receive_timeout from_env="NET_TIMEOUT"/>
+            <send_timeout from_env="NET_TIMEOUT"/>
+            <http_receive_timeout from_env="NET_TIMEOUT"/>
+            <http_send_timeout from_env="NET_TIMEOUT"/>
+            <idle_connection_timeout from_env="INTERACTIVE_TIMEOUT"/>
+            <max_insert_block_size from_env="BATCH_SIZE"/>
+        </default>
+    </profiles>
+</clickhouse>

@@ -1,0 +1,18 @@
+services:
+  clickhouse:
+    image: clickhouse/clickhouse-server:24.8
+    env_file: .env
+    environment:
+      CLICKHOUSE_DB: ${CLICKHOUSE_DB}
+      CLICKHOUSE_USER: ${CLICKHOUSE_USER}
+      CLICKHOUSE_PASSWORD: ${CLICKHOUSE_PASSWORD}
+      CLICKHOUSE_DEFAULT_ACCESS_MANAGEMENT: 1
+    ports:
+      - "${CLICKHOUSE_PORT}:8123"
+      - "9000:9000"
+    volumes:
+      - ./clickhouse/settings.xml:/etc/clickhouse-server/users.d/settings.xml:ro
+    healthcheck:
+      test: ["CMD-SHELL", "clickhouse-client -u $$CLICKHOUSE_USER --password $$CLICKHOUSE_PASSWORD -q 'SELECT 1'"]
+      interval: 3s
+      retries: 30
