@@ -1,5 +1,7 @@
 # Тестовое задание BI: ClickHouse + FastAPI
 
+<img width="1830" height="1386" alt="image" src="https://github.com/user-attachments/assets/851b9834-eee6-4dea-98d2-58e5a4a9de27" />
+
 ## База данных
 
 ClickHouse в Docker. Параметры подключения и обработки лежат в `.env`.
