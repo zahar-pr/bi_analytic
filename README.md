@@ -19,3 +19,15 @@ docker compose up --build
 ## Витрина данных и график
 
 Витрины `ВитринаЦеновыеСегменты` (5 ценовых сегментов по min/max) и `ВитринаПродаж` (облако продаж). График с фильтром по категории: http://localhost:8000
+
+
+## MongoDB-версия
+
+Та же задача на MongoDB, связанными по `_id`, витрины `ВитринаЦеновыеСегменты` и `ВитринаПродаж` как MongoDB views (`$lookup`, `$group`, `$unionWith`).
+
+```bash
+cd mongo
+docker compose up --build
+```
+
+График: http://localhost:8001
